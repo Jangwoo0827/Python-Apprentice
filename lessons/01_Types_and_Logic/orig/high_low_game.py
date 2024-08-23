@@ -2,7 +2,6 @@ import random
 import sys
 from tkinter import simpledialog, messagebox, Tk
 
-
 # TODO 1) Make a new window variable, window = Tk()
 window = Tk()
 # TODO 2) Hide the window using the window's .withdraw() method
