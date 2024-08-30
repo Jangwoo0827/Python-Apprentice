@@ -9,7 +9,7 @@ append them to the story
 words = ['Once', '👦', 'upon', '🐕', 'park', 'met', 'with', 'a', 'the', 
     'time', 'to', 'who', '🐈', '👧', 'and', 'went', 'had', 'play', '⚽.', 'they']
 
-story = []
+story = [Once upon a 🐈 went to a park and met a 🐈. A 🐈s met 🐈s and 🐈s met more 🐈s that continued and they had died with lack of space.]
 
 # Create a story using the words in the list
 

@@ -10,7 +10,6 @@ at the comments and the code snippets in the previous lessons, like
 """
 
 # Import the required modules
-from tkinter import messagebox, simpledialog, Tk
 # Create a window object
 window = Tk()
 # Hide the window, hint: use the withdraw method
