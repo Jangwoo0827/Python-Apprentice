@@ -40,17 +40,36 @@ def ask_integer(prompt):
         except ValueError:
             print("Please enter a valid number!")
 
+def generate_random_number():
+    """Generate a random number between 1 and 100 that is not divisible by 7"""
+    while True:
+        number = random.randint(1, 100)
+        if number % 7 != 0:
+            return number
 
-# Pick the random number
+def main():
+    # Pick the random number
+    random_number = generate_random_number()
 
-# In your loop:
+    while True:
+        # Get the user's guess
+        guess = ask_integer("Guess a number between 1 and 100: ")
 
-    # Get the user's guess
+        # Check if the guess is divisible by 7
+        if guess % 7 == 0:
+            print("That is a very bad number, starting over.")
+            random_number = generate_random_number()
+            continue
+        
+        # Provide feedback based on the guess
+        if guess < random_number:
+            print("Too low!")
+        elif guess > random_number:
+            print("Too high!")
+        else:
+            print("Congratulations! You guessed the correct number.")
+            break
 
-    # If the user's guess is divisible by 7, tell the user to start over
-
-    # If the user's guess is too high, tell the user
-    # If the user's guess is too low, tell the user
-    # If the user's guess is correct, tell the user and break out of the loop
-
-
+# Run the game
+if __name__ == "__main__":
+    main()

@@ -27,14 +27,32 @@ HINT: You can use % and // to get the first and last digit of a number,
 our you can convert the number to a string and iterate over the digits
 
 """
-from guizero import App, Box, Text
+from guizero import App, Box, Text 
 
 app = App("Numbers Grid", layout="grid")
 
 # Create a 10x10 grid using nested loops
 # Or you can use a single loop and calculate the row and column
-Text(app, text=str(1), grid=[10, 10], color='black')
-# In the loop, calculate or increment the number
+for A in range(20):
+    for B in range(20):
+        number = A * 20 + B + 1
+        
+        if number % 15 == 0:
+            text = '🐍'
+            color = "Black"
+        elif number % 5 == 0:
+            text = '🦡'
+            color = "Black"
+        elif number % 3 == 0:
+            text = '🍄'
+            color = "Black"
+        else:
+            text = str(number)
+            color = 'Black'
+        
+        Text(app, text=text, grid=[B, A], color=color)
+
+# In the loop, calculate or increment the 
 
 # Use % determing the display, using fizzbuzz rules
 
