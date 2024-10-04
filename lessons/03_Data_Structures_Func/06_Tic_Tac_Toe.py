@@ -15,20 +15,36 @@ def check_row(l):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
         """
-
+    if l[0] is not None and l[0] == l[1] == l[2]:
+        return l[0]  # Return X_MARK or O_MARK
     return None
 
 def check_win(board):
+
     """Check if a player has won on a board
-    Args:
-        board: a 3x3 2D array
+    Args: board: a 3x3 2D array
     
     Returns:
-        The winner's token ( x or o ) if there is one, otherwise None
+        The winner's token (X or O) if there is one, otherwise None
     """
-
+    # Check rows
+    for row in board:
+        winner = check_row(row)
+        if winner:
+            return winner
+    
+    # Check columns
+    for col in range(3):
+        if check_row([board[row][col] for row in range(3)]):
+            return board[0][col]
+    
+    # Check diagonals
+    if check_row([board[0][0], board[1][1], board[2][2]]):
+        return board[1][1]
+    if check_row([board[0][2], board[1][1], board[2][0]]):
+        return board[1][1]
+    
     return None
-
 # The following code is the main part of the program. It creates a GUI for the
 # game and handles the game logic. Implement the functions above first, then
 # after your program is working you can try chaning the code below. 
